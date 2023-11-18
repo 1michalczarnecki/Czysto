@@ -288,6 +288,13 @@ table {
 			.icon {
 				width: 8vw;
 			}
+
+			&__text:hover,
+			&__text:focus {
+			background-color: $section-color;
+			color: $hover-color;
+			outline: none;
+			}
 		}
 	}
 
