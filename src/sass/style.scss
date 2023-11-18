@@ -263,7 +263,7 @@ table {
 		background: none;
 		width: 100%;
 		text-align: left;
-		
+
 		border-top: 1px solid $section-color;
 		transition: background-color 0.3s;
 		cursor: pointer;
@@ -288,13 +288,12 @@ table {
 			.icon {
 				width: 8vw;
 			}
-
-			&__text:hover,
-			&__text:focus {
+		}
+		&__text:hover,
+		&__text:focus {
 			background-color: $section-color;
 			color: $hover-color;
 			outline: none;
-			}
 		}
 	}
 
@@ -487,11 +486,10 @@ footer {
 }
 
 .footer {
-	
 	&-text {
 		text-align: center;
 		font-size: 1rem;
-		
+
 		padding: 0.3em 1em;
 
 		a {
