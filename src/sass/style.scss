@@ -304,10 +304,12 @@ table {
 		outline: none;
 	}
 
-	&__accordion-btn:hover i,
-	&__accordion-btn:focus i {
+	&__accordion-btn:hover i, p,
+	&__accordion-btn:focus i, p {
 		color: $hover-color;
 	}
+
+
 
 	&__accordion-info {
 		display: none;
