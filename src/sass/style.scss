@@ -1,0 +1,731 @@
+@use 'colors' as *;
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 10px;
+	scroll-behavior: smooth;
+	scroll-padding-top: 20px;
+}
+
+html,
+body {
+	height: 100%;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	background-color: $section-color;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+	font-family: inherit;
+}
+
+button {
+	border: none;
+	cursor: pointer;
+}
+
+textarea {
+	resize: vertical;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.section-scroll {
+	scroll-margin-top: 66px;
+}
+
+// .sticky-body {
+// 	overflow: hidden;
+// }
+
+.section-title {
+	font-size: 1.6rem;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.underline {
+	margin: 0 auto 40px;
+	width: 4em;
+	height: 0.2em;
+	background-color: $hover-color;
+}
+
+.nav {
+	position: fixed;
+	width: 100%;
+	height: 4em;
+	background-color: rgba(238, 238, 238, 0.7);
+	z-index: 600;
+
+	//hamburger-btn
+	.hamburger {
+		position: absolute;
+		top: 50%;
+		right: 1em;
+		transform: translateY(-50%);
+		z-index: 600;
+
+		&-inner,
+		&-inner::before,
+		&-inner::after {
+			background-color: $main-text-color;
+			z-index: 501;
+		}
+	}
+
+	&__desktop {
+		display: none;
+	}
+
+	&__mobile {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 50vh;
+		background-color: $section-color;
+		transform: translateX(-102%);
+		transition: transform 0.3s;
+		z-index: 10;
+
+		&--active {
+			transform: translateX(0);
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		top: 1em;
+		left: 0.5em;
+		font-size: 1.2rem;
+
+		a {
+			color: $main-text-color;
+			transition: color 0.3s;
+		}
+
+		a:hover {
+			color: $hover-color;
+		}
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		a {
+			padding: 1.4em 0;
+			font-size: 1.4rem;
+			color: $main-text-color;
+			transition: color 0.3s;
+		}
+	}
+
+	&__menu {
+		position: relative;
+	}
+
+	&__link::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 3px;
+		width: 100%;
+		background-color: $hover-color;
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.5s;
+	}
+
+	&__link:hover::after {
+		transform: scaleX(1);
+		transform-origin: right;
+	}
+}
+
+//hero{
+.hero {
+	position: relative;
+	top: 4em;
+
+	&__img {
+		position: relative;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		width: 100%;
+		height: 55vh;
+
+		background-image: url('../img/hero-mini.jpg');
+		background-position: center;
+		background-size: cover;
+		z-index: 1;
+	}
+
+	&__text {
+		color: $second-text-color;
+		text-align: left;
+		padding: 2em;
+		z-index: 5;
+
+		p {
+			font-size: 1.4rem;
+			font-weight: 400;
+			margin-bottom: 0.5em;
+		}
+	}
+	&__shadow {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+}
+
+//
+.about-us {
+	margin-top: 4em;
+	padding: 4em 2em;
+	&__text {
+		font-size: 1rem;
+	}
+}
+
+//services
+.services {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: $second-text-color;
+	padding: 4em 0;
+
+	//accordion
+	i {
+		margin-right: 0.3em;
+		color: $main-text-color;
+	}
+
+	&__accordion {
+		width: 95vw;
+		background-color: $second-text-color;
+	}
+
+	&__accordion-box {
+		margin: 0 1.5em;
+	}
+	&__accordion-btn {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 1.2em;
+		background: none;
+		width: 100%;
+		text-align: left;
+		color: $main-text-color;
+		border-top: 1px solid $section-color;
+		transition: background-color 0.3s;
+		cursor: pointer;
+
+		&:last-of-type {
+			border-bottom: 1px solid $section-color;
+		}
+
+		&__icon {
+			position: absolute;
+			top: 50%;
+			right: 0.2em;
+			transform: translate(-50%, -50%);
+		}
+
+		&__text {
+			display: flex;
+			text-align: center;
+			font-size: 1rem;
+
+			.icon {
+				width: 8vw;
+			}
+		}
+	}
+
+	&__accordion-btn:hover,
+	&__accordion-btn:focus {
+		background-color: $section-color;
+		color: $hover-color;
+		outline: none;
+	}
+
+	&__accordion-btn:hover i,
+	&__accordion-btn:focus i {
+		color: $hover-color;
+	}
+
+	&__accordion-info {
+		display: none;
+		padding: 1em 2em;
+	}
+
+	.active {
+		display: block;
+	}
+}
+
+// contact
+.contact {
+	padding: 4em 2em;
+
+	&__title {
+		font-size: 1rem;
+		text-align: left;
+		margin-bottom: 2em;
+	}
+	&____box {
+		&-contacts {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	.form__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+
+		label {
+			font-size: 0.9rem;
+			width: 100%;
+			margin-bottom: 0.5em;
+			text-align: left;
+			text-transform: uppercase;
+		}
+
+		input {
+			font-size: 0.9rem;
+			padding: 1em 0;
+			width: 100%;
+			border-radius: 0.5em;
+			border: none;
+			text-align: left;
+		}
+
+		textarea {
+			font-size: 0.9rem;
+			min-width: 100%;
+			width: 100%;
+			min-height: 10em;
+			border-radius: 0.5em;
+		}
+
+		.error-text {
+			margin: 0.5em 0.5em;
+			font-size: 0.9rem;
+			color: tomato;
+			text-align: left;
+			visibility: hidden;
+		}
+
+		&.error input {
+			font-size: 0.9rem;
+			padding: 1em 0;
+			width: 100%;
+			border-radius: 0.5em;
+			border: none;
+			text-align: left;
+		}
+
+		&.error textarea {
+			font-size: 0.9rem;
+			min-width: 100%;
+			width: 100%;
+			min-height: 10em;
+			border-radius: 0.5em;
+		}
+		&.error .error-text {
+			visibility: visible;
+		}
+	}
+	.control-buttons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+
+		button {
+			width: 100%;
+			margin-bottom: 1em;
+			padding: 0.7em 0;
+			background-color: $hover-color;
+			color: $second-text-color;
+			border: none;
+			border-radius: 0.5em;
+			text-transform: uppercase;
+			transition: background-color 0.3s;
+		}
+		button:hover {
+			background-color: $hover-btn;
+		}
+
+		.clear {
+			background-color: gray;
+		}
+
+		.clear:hover {
+			background-color: rgb(160, 160, 160);
+		}
+	}
+
+	&__text {
+		&-details {
+			margin: 2em 0;
+			a {
+				color: $main-text-color;
+			}
+			a:hover {
+				color: $hover-color;
+			}
+		}
+	}
+}
+
+.popup {
+	display: none;
+}
+
+.popup p {
+	font-size: 1.2rem;
+}
+
+.close {
+	margin-top: 3em;
+	padding: 1em;
+	background-color: $hover-btn;
+	color: $second-text-color;
+	border-radius: 0.3em;
+	font-size: 1rem;
+}
+
+.close:hover {
+	background-color: $hover-btn;
+}
+
+.show-popup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+	top: -350px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.2rem;
+	width: 100vw;
+	height: 30vh;
+	background-color: $second-text-color;
+	border-radius: 0.3em;
+	border: 0.3em solid $hover-color;
+	transition: top 0.5s;
+}
+
+//footer
+footer {
+	background-color: $section-color;
+}
+
+.footer {
+	&-text {
+		text-align: center;
+		font-size: 1rem;
+		padding: 0.3em 1em;
+
+		a {
+			color: $main-text;
+		}
+		a:hover {
+			color: $hover-color;
+		}
+	}
+}
+
+//media
+
+@media (min-width: 576px) {
+	.about-us {
+		&__text {
+			font-size: 1rem;
+		}
+	}
+	.services {
+		&__accordion-btn {
+			&__text {
+				font-size: 1.1rem;
+			}
+		}
+	}
+
+	.footer {
+		&-text {
+			padding: 0.4em 1.2em;
+			font-size: 1.1rem;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.about-us {
+		&__text {
+			font-size: 1rem;
+		}
+	}
+
+	.services {
+		&__accordion-btn {
+			&__text {
+				font-size: 1.2rem;
+			}
+		}
+	}
+
+	.contact {
+		&__title {
+			font-size: 1.1rem;
+		}
+		.form__box {
+			label {
+				font-size: 1.1rem;
+			}
+
+			input {
+				font-size: 1rem;
+			}
+
+			textarea {
+				font-size: 1rem;
+			}
+		}
+
+		.control-buttons {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+
+			button {
+				width: 20vw;
+				padding: 0.7em 0;
+				font-size: 0.9rem;
+			}
+		}
+
+		&__text {
+			&-details {
+				a {
+					font-size: 1.1rem;
+				}
+			}
+		}
+	}
+
+	.footer {
+		&-text {
+			padding: 0.5em 1.4em;
+			font-size: 1.1rem;
+		}
+	}
+}
+@media (min-width: 992px) {
+	.section-title {
+		font-size: 2.2rem;
+	}
+
+	.hamburger {
+		display: none;
+	}
+
+	.nav {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: auto;
+
+		&__desktop {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 1em;
+
+			&-items {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			&-item {
+				padding: 1em 1em;
+				font-size: 1.2rem;
+				color: $main-text-color;
+				transition: color 0.3s, background-color 0.3s;
+
+				&:hover {
+					color: $hover-color;
+					background-color: $section-color;
+				}
+			}
+		}
+
+		&__mobile {
+			display: none;
+		}
+
+		&__logo {
+			display: none;
+
+			&-desktop {
+				font-size: 1.4rem;
+
+				a {
+					color: $main-text-color;
+				}
+				a:hover {
+					color: $hover-color;
+				}
+			}
+		}
+	}
+
+	.hero {
+		&__img {
+			background-image: url('../img/hero-big.jpg');
+			height: 65vh;
+		}
+
+		&__text {
+			h1 {
+				font-size: 2.5rem;
+				font-weight: 700;
+			}
+
+			p {
+				font-size: 1.8rem;
+			}
+		}
+	}
+
+	.about-us {
+		&__text {
+			font-size: 1.2rem;
+		}
+	}
+
+	.services {
+		&__accordion {
+			width: 90vw;
+		}
+		&__accordion-btn {
+			&__text {
+				font-size: 1.6rem;
+			}
+		}
+	}
+
+	.contact {
+		&__title {
+			font-size: 1.2rem;
+		}
+		.form__box {
+			label {
+				font-size: 1.2rem;
+			}
+
+			input {
+				font-size: 1.1rem;
+			}
+
+			textarea {
+				font-size: 1.1rem;
+			}
+		}
+
+		.control-buttons {
+			button {
+				width: 15vw;
+				padding: 0.7em 0;
+				font-size: 1.1rem;
+			}
+		}
+
+		&__text {
+			&-details {
+				a {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+
+	.popup p {
+		font-size: 1.2rem;
+	}
+
+	.close {
+		margin-top: 3em;
+		padding: 1em;
+		background-color: $hover-btn;
+		color: $second-text-color;
+		border-radius: 0.3em;
+		font-size: 1.1rem;
+	}
+
+	.footer {
+		&-text {
+			padding: 0.6em 2em;
+			font-size: 1.2rem;
+		}
+	}
+}
