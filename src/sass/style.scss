@@ -238,7 +238,7 @@ table {
 	align-items: center;
 	flex-direction: column;
 	background-color: $second-text-color;
-	padding: 4em 0;
+	padding: 2em 0;
 
 	//accordion
 	i {
@@ -263,7 +263,7 @@ table {
 		background: none;
 		width: 100%;
 		text-align: left;
-		color: $main-text-color;
+		
 		border-top: 1px solid $section-color;
 		transition: background-color 0.3s;
 		cursor: pointer;
@@ -283,6 +283,7 @@ table {
 			display: flex;
 			text-align: center;
 			font-size: 1rem;
+			color: $main-text-color;
 
 			.icon {
 				width: 8vw;
@@ -479,13 +480,15 @@ footer {
 }
 
 .footer {
+	
 	&-text {
 		text-align: center;
 		font-size: 1rem;
+		
 		padding: 0.3em 1em;
 
 		a {
-			color: $main-text;
+			color: $main-text-color;
 		}
 		a:hover {
 			color: $hover-color;
