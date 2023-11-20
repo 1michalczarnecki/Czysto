@@ -137,8 +137,10 @@ table {
 			transition: color 0.3s;
 		}
 
-		a:hover {
+		a:hover,
+		a:focus {
 			color: $hover-color;
+			outline: none;
 		}
 	}
 
@@ -263,10 +265,9 @@ table {
 		background: none;
 		width: 100%;
 		text-align: left;
-
 		border-top: 1px solid $section-color;
-		transition: background-color 0.3s;
 		cursor: pointer;
+		transition: background-color .3s;
 
 		&:last-of-type {
 			border-bottom: 1px solid $section-color;
@@ -283,28 +284,32 @@ table {
 			display: flex;
 			text-align: center;
 			font-size: 1rem;
-			color: $main-text-color;
+			
 
 			.icon {
 				width: 8vw;
 			}
 		}
-		
+
+		i, p{
+			color: $main-text-color;
+			transition: color .3s;
+		}
 	}
 
 	&__accordion-btn:hover,
 	&__accordion-btn:focus {
 		background-color: $section-color;
-		color: $hover-color;
 		outline: none;
 	}
 
-	&__accordion-btn:hover i, &__accordion-btn:hover p,
-	&__accordion-btn:focus i, &__accordion-btn:focus p {
+	&__accordion-btn:hover i,
+	&__accordion-btn:hover p,
+	&__accordion-btn:focus i,
+	&__accordion-btn:focus p {
 		color: $hover-color;
+		outline: none;
 	}
-
-
 
 	&__accordion-info {
 		display: none;
@@ -356,6 +361,12 @@ table {
 			border-radius: 0.5em;
 			border: none;
 			text-align: left;
+			transition: border 0.3s;
+		}
+
+		input:focus {
+			border: 0.1em solid $hover-color;
+			outline: none;
 		}
 
 		textarea {
@@ -364,6 +375,11 @@ table {
 			width: 100%;
 			min-height: 10em;
 			border-radius: 0.5em;
+			transition: border 0.3s;
+		}
+		textarea:focus {
+			border: 0.1em solid $hover-color;
+			outline: none;
 		}
 
 		.error-text {
@@ -412,8 +428,10 @@ table {
 			text-transform: uppercase;
 			transition: background-color 0.3s;
 		}
-		button:hover {
+		button:hover,
+		button:focus {
 			background-color: $hover-btn;
+			outline: none;
 		}
 
 		.clear {
@@ -430,9 +448,12 @@ table {
 			margin: 2em 0;
 			a {
 				color: $main-text-color;
+				transition: color .3s;
 			}
-			a:hover {
+			a:hover,
+			a:focus {
 				color: $hover-color;
+				outline: none;
 			}
 		}
 	}
@@ -455,8 +476,10 @@ table {
 	font-size: 1rem;
 }
 
-.close:hover {
+.close:hover,
+.close:focus {
 	background-color: $hover-btn;
+	outline: none;
 }
 
 .show-popup {
@@ -489,12 +512,18 @@ footer {
 
 		padding: 0.3em 1em;
 
-		a {
+		i {
 			color: $main-text-color;
+			transition: color .3s;
+
+			
 		}
-		a:hover {
-			color: $hover-color;
-		}
+		i:hover,
+		a:focus,
+		a:focus i {
+				color: $hover-color;
+				outline: none;
+			}
 	}
 }
 
@@ -617,9 +646,11 @@ footer {
 				color: $main-text-color;
 				transition: color 0.3s, background-color 0.3s;
 
-				&:hover {
+				&:hover,
+				&:focus {
 					color: $hover-color;
 					background-color: $section-color;
+					outline: none;
 				}
 			}
 		}
@@ -637,8 +668,10 @@ footer {
 				a {
 					color: $main-text-color;
 				}
-				a:hover {
+				a:hover,
+				a:focus {
 					color: $hover-color;
+					outline: none;
 				}
 			}
 		}
