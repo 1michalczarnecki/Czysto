@@ -3,6 +3,22 @@ const navMenu = document.querySelector('.nav__mobile');
 const navLinks = document.querySelectorAll('.nav__link');
 const accordionBtns = document.querySelectorAll('.services__accordion-btn');
 const footerYear = document.querySelector('.footer__year')
+const textElement = document.querySelector('.animation-text')
+const inputValue = textElement.innerText 
+
+let timeout
+let index = 0
+let speed = 30
+
+const writingAnimation = () => {
+    textElement.innerHTML = inputValue.slice(0, index)
+    
+    index++
+    
+    if (index <= inputValue.length) {
+        timeout = setTimeout(writingAnimation, speed)
+    }
+}
 
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -56,6 +72,10 @@ navBtn.addEventListener('click', showNavMobile);
 accordionBtns.forEach(btn => btn.addEventListener('click', openAccordionItems));
 window.addEventListener('click', clickOutsideAccordion);
 handleCurrentYear()
+writingAnimation()
+
+
+
 
 
 
