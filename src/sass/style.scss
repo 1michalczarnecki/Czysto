@@ -68,7 +68,7 @@ table {
 .section-title {
 	font-size: 1.6rem;
 	text-align: center;
-	text-transform: uppercase;
+	// text-transform: uppercase;
 }
 
 .underline {
@@ -76,6 +76,23 @@ table {
 	width: 4em;
 	height: 0.2em;
 	background-color: $hover-color;
+}
+
+.scroll-to-top {
+	display: none;
+	position: fixed;
+	bottom: 0.5em;
+	right: 0.5em;
+	padding: 1em 1em;
+	background: rgba(128, 128, 128, 0.3);
+	color: $second-text-color;
+	border: none;
+	border-radius: 0.5em;
+	cursor: pointer;
+}
+
+.active {
+	display: block;
 }
 
 //nav
@@ -547,6 +564,18 @@ footer {
 //media
 
 @media (min-width: 576px) {
+
+	.scroll-to-top {
+		
+		bottom: 1.2em;
+		right: 1.2em;
+		padding: 1.2em 1.2em;
+
+		i{
+			font-size: 1.2rem;
+		}
+		
+	}
 	.about-us {
 		&__text {
 			font-size: 1rem;
@@ -569,6 +598,18 @@ footer {
 }
 
 @media (min-width: 768px) {
+
+	.scroll-to-top {
+		
+		bottom: 1.4em;
+		right: 1.4em;
+		padding: 1.4em 1.4em;
+
+		i{
+			font-size: 1.2rem;
+		}
+		
+	}
 	.about-us {
 		&__text {
 			font-size: 1rem;
@@ -641,6 +682,18 @@ footer {
 
 	.hamburger {
 		display: none;
+	}
+
+	.scroll-to-top {
+		
+		bottom: 1.6em;
+		right: 1.6em;
+		padding: 1.6em 1.6em;
+
+		i{
+			font-size: 1.4rem;
+		}
+		
 	}
 
 	.nav {
