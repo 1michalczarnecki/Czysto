@@ -226,7 +226,7 @@ table {
 		padding: 2em;
 		z-index: 5;
 
-		p {
+		.company-name {
 			font-size: 1.4rem;
 			font-weight: 400;
 			margin-bottom: 0.5em;
@@ -250,6 +250,9 @@ table {
 	padding: 4em 2em;
 	&__text {
 		font-size: 1rem;
+		&-p{
+			margin-bottom: 1em;
+		}
 	}
 }
 

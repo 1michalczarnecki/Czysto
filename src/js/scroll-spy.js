@@ -29,7 +29,6 @@ window.addEventListener('scroll', () => {
 const scrollToTop = () => {
   window.scroll({
     top: 0,
-   
   });
 };
 
